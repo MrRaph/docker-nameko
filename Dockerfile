@@ -10,9 +10,5 @@ ONBUILD RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev
   && pip install -r /tmp/requirements.txt \
   && apk del build-dependencies
 
-  ONBUILD COPY my_runonce/ /etc/my_runonce
-  ONBUILD COPY my_runalways/ /etc/my_runalways
-
-
-docker push git.techan.fr:5443/itop-automation/useradmin
- https://git.techan.fr:5443/v0/:
+ONBUILD COPY my_runonce/ /etc/my_runonce
+ONBUILD COPY my_runalways/ /etc/my_runalways
